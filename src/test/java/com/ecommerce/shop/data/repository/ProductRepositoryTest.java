@@ -7,12 +7,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Slf4j
+@Sql(scripts = {"/db/insert.sql"})
 class ProductRepositoryTest {
     @Autowired
     ProductRepository productRepositoryImpl;
@@ -39,5 +44,13 @@ class ProductRepositoryTest {
         productRepositoryImpl.save(product);
         assertThat(product.getId()).isNotNull();
         log.info("Product after saving -> {}", product);
+    }
+
+    @Test
+    @Transactional
+    public void whenFindAllProductIsCalledThenProductListIsReturnedTest() {
+        List<Product> products = productRepositoryImpl.findAll();
+        assertThat(products).hasSize(4);
+        log.info("Product returned from database ->{}", products);
     }
 }
