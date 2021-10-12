@@ -14,7 +14,9 @@ public class Product {
     @Column(nullable = false)
     private String name;
     private Double price;
-    private String currency;
+    @Enumerated(EnumType.STRING)
+    private Currency currency;
+    @Column(length = 500)
     private String details;
     @ElementCollection
     private List<String> imageUrl;
