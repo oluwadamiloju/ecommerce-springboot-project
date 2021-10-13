@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,27 +38,27 @@
 	<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="../static/css/animate.css">
+	<link rel="stylesheet" th:href="@{css/animate.css}">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="../static/css/icomoon.css">
+	<link rel="stylesheet" th:href="@{css/icomoon.css}">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" th:href="@{css/bootstrap.css}">
 
 	<!-- Flexslider  -->
-	<link rel="stylesheet" href="../static/css/flexslider.css">
+	<link rel="stylesheet" th:href="@{css/flexslider.css}">
 
 	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+	<link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+	<link rel="stylesheet" th:href="@{css/owl.theme.default.min.css}">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" th:href="@{css/style.css}">
 
 	<!-- Modernizr JS -->
-	<script src="../static/js/modernizr-2.6.2.min.js"></script>
+	<script th:src="@{js/modernizr-2.6.2.min.js}"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
-		<script src="../static/js/respond.min.js"></script>
+		<script th:src="@{js/respond.min.js}"></script>
 		<![endif]-->
 
 	</head>
@@ -280,7 +280,6 @@
 							<li><a href="#"><i class="icon-linkedin"></i></a></li>
 							<li><a href="#"><i class="icon-dribbble"></i></a></li>
 						</ul>
-					</p>
 				</div>
 			</div>
 
